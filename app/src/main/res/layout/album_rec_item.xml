@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/albumArt"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:shapeAppearanceOverlay="@style/albumRoundedImageView"
+        tools:srcCompat="@drawable/album_p" />
+
+    <TextView
+        android:id="@+id/albumTitel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/albumArt"
+        android:fontFamily="@font/ubuntu"
+        android:text="Album"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/songsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/albumTitel"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/albumArt"
+        android:fontFamily="@font/ubuntu"
+        android:text="123 Songs"
+        android:maxLines="1"
+        android:textColor="@color/gray_text" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/albumTitel"
+        android:layout_toEndOf="@id/songsText"
+        android:fontFamily="@font/ubuntu"
+        android:text=" - "
+        android:maxLines="1"
+        android:textColor="@color/gray_text" />
+
+    <TextView
+        android:id="@+id/artistText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/albumTitel"
+        android:layout_toEndOf="@id/textView13"
+        android:fontFamily="@font/ubuntu"
+        android:text="Artist"
+        android:maxLines="1"
+        android:textColor="@color/gray_text" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:layout_below="@id/albumArt" />
+
+</RelativeLayout>

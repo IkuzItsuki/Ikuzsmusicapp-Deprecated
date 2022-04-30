@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Disable Action bar -->
+    <style name="Theme.Ikuzsmusicapp.NoactionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
+    </style>
+    <style name="NoAllCaps" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20dp</item>
+        <item name="fontFamily">@font/ubuntu</item>
+        <item name="android:fontFamily">@font/ubuntu</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="NoAllCapsBold" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20dp</item>
+        <item name="fontFamily">@font/ubuntu</item>
+        <item name="android:fontFamily">@font/ubuntu</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/alertdialog_bg</item>
+    </style>
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="albumRoundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+</resources>
