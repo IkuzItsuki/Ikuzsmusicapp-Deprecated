@@ -20,5 +20,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.activity_open_enter, R.anim.activity_open_exit)
         }
+        binding.cloudButton.setOnClickListener{
+            val intent = Intent(this, CloudActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.activity_open_enter, R.anim.activity_open_exit)
+        }
     }
 }

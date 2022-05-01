@@ -26,7 +26,7 @@ class LocalSongFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLocalSongBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -35,19 +35,19 @@ class LocalSongFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
 
-        var projection : Array<String> = arrayOf(
+        val projection : Array<String> = arrayOf(
             MediaStore.Audio.Media.DATA,
             MediaStore.Audio.Media.TITLE,
             MediaStore.Audio.Media.ARTIST,
             MediaStore.Audio.Media.ALBUM
         )
 
-        var selection : String = MediaStore.Audio.Media.IS_MUSIC + " != 0"
-        var resolver = requireActivity().contentResolver
+        val selection : String = MediaStore.Audio.Media.IS_MUSIC + " != 0"
+        val resolver = requireActivity().contentResolver
 
-        var cursor : Cursor? = resolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null, null)
+        val cursor : Cursor? = resolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null, null)
         while (cursor!!.moveToNext()){
-            var songData = SongModel(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3))
+            val songData = SongModel(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3))
             if(File(songData.path).exists()){
                 songList.add(songData)
             }

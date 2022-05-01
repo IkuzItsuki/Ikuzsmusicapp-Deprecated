@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ikuzsmusicapp">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,13 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ikuzsmusicapp.NoactionBar">
         <activity
-            android:name=".activities.LocalActivity"
-            android:screenOrientation="locked"
+            android:name=".activities.CloudActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.LocalActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
             android:name=".activities.MainActivity"
-            android:screenOrientation="locked"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

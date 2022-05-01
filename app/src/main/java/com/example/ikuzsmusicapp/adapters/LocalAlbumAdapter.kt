@@ -37,7 +37,6 @@ class LocalAlbumAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val AlbumData : AlbumModel = AlbumList[position]
-//        var url = LocalAlbumFragment.getArtUriFromMusicFile
         holder.albumTitel.text = AlbumData.album
         holder.songsText.text = AlbumData.numsongs.toString() + " Songs"
         holder.artistText.text = AlbumData.artist
@@ -45,7 +44,7 @@ class LocalAlbumAdapter(
             if (this != null) {
                 File(
                     Constant.imaSongDir.absolutePath + "/album_art",
-                    File(AlbumData.filePath).nameWithoutExtension
+                    File(AlbumData.album).nameWithoutExtension
                 ).also {
                     when {
                         it.exists() -> Glide.with(holder.getContext())
@@ -58,11 +57,11 @@ class LocalAlbumAdapter(
                                 val sArtworkUri =
                                     Uri.parse("content://media/external/audio/albumart")
                                 val albumArtUri =
-                                    ContentUris.withAppendedId(sArtworkUri, AlbumData.album)
+                                    ContentUris.withAppendedId(sArtworkUri, AlbumData._id)
                                 Glide
                                     .with(holder.getContext())
                                     .load(albumArtUri)
-                                    .placeholder(Shared.defBitmap.toDrawable(resources))
+                                    .placeholder(R.drawable.album_p)
                                     .into(this)
                             } catch (e: Exception) {
                                 e.printStackTrace()

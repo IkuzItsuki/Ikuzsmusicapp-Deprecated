@@ -1,47 +1,37 @@
 package com.example.ikuzsmusicapp.activities
 
-import android.Manifest
 import android.content.Context
-import android.content.pm.PackageManager
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
-import android.view.*
+import android.view.MotionEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
-import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import android.widget.EditText
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.example.ikuzsmusicapp.fragments.LocalAlbumFragment
-import com.example.ikuzsmusicapp.fragments.LocalArtistFragment
-import com.example.ikuzsmusicapp.fragments.LocalSongFragment
 import com.example.ikuzsmusicapp.R
-import com.example.ikuzsmusicapp.databinding.ActivityLocalBinding
-import com.example.ikuzsmusicapp.models.SongModel
+import com.example.ikuzsmusicapp.databinding.ActivityCloudBinding
+import com.example.ikuzsmusicapp.fragments.CloudAlbumFragment
+import com.example.ikuzsmusicapp.fragments.CloudArtistFragment
+import com.example.ikuzsmusicapp.fragments.CloudSongFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class LocalActivity : FragmentActivity() {
+class CloudActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLocalBinding
+    private lateinit var binding : ActivityCloudBinding
     private lateinit var viewPager: ViewPager2
     private lateinit var tablayout: TabLayout
     private var tabTitel = arrayOf("Song", "Artist", "Album")
-    var songList : ArrayList<SongModel> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityLocalBinding.inflate(layoutInflater)
+        binding = ActivityCloudBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        if(!checkPermission()){
-            perminsionInfo()
-        }
 
         binding.topAppBar.setNavigationOnClickListener {
             finish()
@@ -50,14 +40,15 @@ class LocalActivity : FragmentActivity() {
             binding.SongSearchBar.onActionViewExpanded()
         }
 
-        tablayout = binding.LocalSongTabLayout
-        viewPager = binding.LocalSongVp
+        tablayout = binding.CloudSongTabLayout
+        viewPager = binding.CloudSongVp
         viewPager.adapter = SongPageAdapter(supportFragmentManager, lifecycle)
         TabLayoutMediator(tablayout, viewPager){
-            tab, position ->
-                tab.text = tabTitel[position]
+                tab, position ->
+            tab.text = tabTitel[position]
         }.attach()
     }
+
     override fun dispatchTouchEvent(motionevent: MotionEvent): Boolean {
         if (motionevent.action == MotionEvent.ACTION_DOWN) {
             val v= currentFocus
@@ -86,50 +77,19 @@ class LocalActivity : FragmentActivity() {
         }
     }
 
-    private class SongPageAdapter (fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle){
+    class SongPageAdapter (fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle){
         override fun getItemCount(): Int {
             return 3
         }
 
         override fun createFragment(position: Int): Fragment {
             return when(position){
-                0 -> LocalSongFragment()
-                1 -> LocalArtistFragment()
-                2 -> LocalAlbumFragment()
-                else -> LocalSongFragment()
+                0 -> CloudSongFragment()
+                1 -> CloudArtistFragment()
+                2 -> CloudAlbumFragment()
+                else -> CloudSongFragment()
             }
         }
-    }
-
-    private fun perminsionInfo(){
-        val infoDialog : AlertDialog.Builder = AlertDialog.Builder(this, R.style.CustomAlertDialog)
-        val dialogView : View = layoutInflater.inflate(R.layout.alertdialog_permission_request, null)
-        val confirmBtn : Button = dialogView.findViewById<Button>(R.id.ConfirmBtn) as Button
-        infoDialog.setView(dialogView)
-        val dialog : AlertDialog = infoDialog.create()
-        dialog.show()
-        dialog.setCanceledOnTouchOutside(false)
-
-        confirmBtn.setOnClickListener {
-            requestPermission()
-            dialog.dismiss()
-        }
-    }
-
-    private fun checkPermission(): Boolean {
-        val result : Int = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-        if (result == PackageManager.PERMISSION_GRANTED) {
-            return true
-        } else{
-            return false
-        }
-    }
-
-    private fun requestPermission(){
-        if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)){
-            Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
-        }
-        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 123)
     }
 
     override fun finish() {

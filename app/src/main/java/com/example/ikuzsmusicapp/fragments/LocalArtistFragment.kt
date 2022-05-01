@@ -18,7 +18,7 @@ class LocalArtistFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLocalArtistBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
