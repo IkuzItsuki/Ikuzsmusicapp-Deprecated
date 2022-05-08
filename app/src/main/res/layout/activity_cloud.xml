@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.CloudActivity">
+    tools:context="com.ikuz.ikuzsmusicapp.activities.CloudActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

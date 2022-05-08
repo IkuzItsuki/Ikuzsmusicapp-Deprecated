@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context="com.ikuz.ikuzsmusicapp.activities.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -122,12 +123,12 @@
             android:id="@+id/imageView7"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:src="@drawable/ic_storeage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/materialDivider3"
             app:layout_constraintTop_toTopOf="@+id/cloudButton"
-            app:layout_constraintVertical_bias="0.35000002"
-            android:src="@drawable/ic_storeage" />
+            app:layout_constraintVertical_bias="0.35000002" />
 
         <TextView
             android:id="@+id/textView5"
@@ -173,10 +174,10 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
+            android:src="@drawable/ic_note"
             app:layout_constraintBottom_toTopOf="@+id/materialDivider2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_note" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
@@ -221,10 +222,10 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
+            android:src="@drawable/ic_cog"
             app:layout_constraintBottom_toTopOf="@+id/materialDivider"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialDivider2"
-            android:src="@drawable/ic_cog" />
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider2" />
 
         <TextView
             android:id="@+id/textView2"
@@ -270,10 +271,10 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
+            android:src="@drawable/ic_info"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialDivider"
-            android:src="@drawable/ic_info" />
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
 
         <TextView
             android:id="@+id/textView3"
@@ -290,4 +291,12 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

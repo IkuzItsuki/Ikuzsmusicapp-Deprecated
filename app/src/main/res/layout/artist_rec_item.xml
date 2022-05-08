@@ -5,35 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/artistArt"
         android:layout_width="55dp"
         android:layout_height="55dp"
         app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/artistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@id/imageView8"
+        android:layout_toEndOf="@id/artistArt"
         android:fontFamily="@font/ubuntu"
+        android:maxLines="1"
         android:text="Artist"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/artistNumSong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView8"
+        android:layout_below="@id/artistName"
         android:layout_marginStart="20dp"
-        android:layout_toEndOf="@id/imageView8"
+        android:layout_toEndOf="@id/artistArt"
+        android:maxLines="1"
         android:text="123 Songs"
         android:textColor="@color/gray_text" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:layout_below="@id/artistArt" />
 </RelativeLayout>

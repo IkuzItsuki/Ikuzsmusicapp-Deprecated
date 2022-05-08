@@ -16,4 +16,12 @@
         <item name="fontFamily">@font/ubuntu</item>
         <item name="android:fontFamily">@font/ubuntu</item>
     </style>
+    <style name="Theme.Ikuzsmusicapp.NoactionBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Ikuzsmusicapp.NoactionBar.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Ikuzsmusicapp.NoactionBar.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
 </resources>

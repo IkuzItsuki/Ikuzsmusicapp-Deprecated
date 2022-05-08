@@ -27,8 +27,11 @@
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/drawable/serch_bar.xml" value="0.369" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/drawable/tab_indicator.xml" value="0.369" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/activity_cloud.xml" value="0.3021367521367521" />
-        <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/activity_local.xml" value="0.5138121546961326" />
+        <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/activity_local.xml" value="0.33" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/activity_main.xml" value="0.2768959435626102" />
+        <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/activity_note.xml" value="0.3021367521367521" />
+        <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/activity_player.xml" value="0.20982905982905983" />
+        <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/activity_setting.xml" value="0.20982905982905983" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/album_rec_item.xml" value="0.6" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/alertdialog_permission_request.xml" value="0.3021367521367521" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/artist_rec_item.xml" value="0.6" />
@@ -37,12 +40,16 @@
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/fragment_cloud_album.xml" value="0.3021367521367521" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/fragment_cloud_artist.xml" value="0.3021367521367521" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/fragment_cloud_song.xml" value="0.15" />
+        <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/fragment_local.xml" value="0.4" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/fragment_local_album.xml" value="0.3021367521367521" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/fragment_local_artist.xml" value="0.3021367521367521" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/fragment_local_song.xml" value="0.3021367521367521" />
+        <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/fragment_player.xml" value="0.25" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/local_song_rec_item.xml" value="0.5" />
+        <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/player_bigger.xml" value="0.33" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/popup_permission_request.xml" value="0.3021367521367521" />
         <entry key="..\:/ikuzsmusicapp/app/src/main/res/layout/song_rec_item.xml" value="0.67" />
+        <entry key="..\:/ikuzsmusicapp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.369" />
       </map>
     </option>
   </component>
